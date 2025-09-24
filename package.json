@@ -1,0 +1,23 @@
+{
+  "name": "orangehrmwebsite-e2e-pw_js",
+  "version": "1.0.0",
+  "description": "This is \"Readme.md\" file for this automation project.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beinghumantester/OrangeHRMWebsite-E2E-PW_JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/beinghumantester/OrangeHRMWebsite-E2E-PW_JS/issues"
+  },
+  "homepage": "https://github.com/beinghumantester/OrangeHRMWebsite-E2E-PW_JS#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.5.2"
+  }
+}

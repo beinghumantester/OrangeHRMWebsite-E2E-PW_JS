@@ -14,7 +14,7 @@ expect:{
   timeout: 4*1000
 },
 
-
+ reporter : 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
 

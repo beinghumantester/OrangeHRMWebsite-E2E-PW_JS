@@ -1,7 +1,6 @@
 const { test,expect } = require("@playwright/test");
 
 
-
 test("Browser Context Declaration", async ({ browser }) => {
   const context = await browser.newContext(); // it creates a new context
   const page = await context.newPage(); // and new page inside that context
@@ -18,8 +17,6 @@ test.only("Login with invalid credentials. ", async ({page,}) =>
   await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); // and hit the url inside that page
   console.log(await page.title());
   await expect(page).toHaveTitle("OrangeHRM");
-
-
 
   await username.fill("Admin");
   await password.fill("admin");

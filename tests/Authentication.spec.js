@@ -8,7 +8,7 @@ test("Browser Context Declaration", async ({ browser }) => {
   console.log(await page.title());
 });
 
-test.only("Login with invalid credentials. ", async ({page,}) =>
+test("Login with invalid credentials. ", async ({page,}) =>
   {
   let username = page.locator('[name="username"]');
   let password = page.locator('[name="password"]');
@@ -49,8 +49,8 @@ test.only("Login with invalid credentials. ", async ({page,}) =>
   }
 );
 
-test.only("Login with valid credentials ", async ({ page }) => {
-  await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); // and hit the url inside that page
+test.only("Login with valid credentials", async ({ page,context }) => {
+  await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
   console.log(await page.title());
 
   await expect(page).toHaveTitle("OrangeHRM");
@@ -60,7 +60,42 @@ test.only("Login with valid credentials ", async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
-  await page.locator('//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a').click();
-  await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList");
-  await page.pause();
+
+  // Wait until all menu items render
+  await page.waitForSelector('ul.oxd-main-menu li span.oxd-main-menu-item--name');
+
+  // Grab all visible menu names
+  const menuItems = await page
+    .locator('ul.oxd-main-menu li span.oxd-main-menu-item--name')
+    .allInnerTexts();
+
+  for (const [index, item] of menuItems.entries()) {
+    console.log(`${index + 1}. ${item.trim()}`);
+  }
+
+
+const [newPage] = await Promise.all([
+  context.waitForEvent('page'),
+  page.click("a[href='http://www.orangehrm.com']"),
+]);
+
+await newPage.waitForLoadState('domcontentloaded'); // or 'load'
+const text = await newPage.locator(
+  "body > div.main > div.inner.typography.line > section > div.home-slider-section > div > div:nth-child(1) > div > div > div.page-title > h1"
+).textContent();
+
+console.log(text);
+
+const arrayTest = text.split("HR");
+const text1 = arrayTest[1];
+const text2=text1.split(" One")[0];
+console.log(text1);
+console.log(text2);
+await newPage.close();
+
+page.locator("input[placeholder='Search']").fill(text2);
+
+
+  // Optional: pause to visually verify
+   await page.pause();
 });

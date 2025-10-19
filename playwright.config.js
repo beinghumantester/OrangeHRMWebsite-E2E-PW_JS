@@ -7,11 +7,11 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 const config =({
   testDir: './tests',
-  timeout: 40 * 1000,
+  timeout: 60 * 1000,
   /* Run tests in files in parallel */
 
 expect:{  
-  timeout: 4*1000
+  timeout: 60*1000
 },
 
  reporter : 'html',

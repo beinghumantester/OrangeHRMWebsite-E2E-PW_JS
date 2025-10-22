@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const { trace } = require('console');
 
 
 /**
@@ -19,8 +20,12 @@ expect:{
   use: {
 
     browserName: 'chromium',
+    screenshot: 'on',
+    //trace: 'on',
+    trace: 'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    headless: false 
+    headless: false,
+    viewport: { width: 1920, height: 1080}
   },
 
   /* Configure projects for major browsers */

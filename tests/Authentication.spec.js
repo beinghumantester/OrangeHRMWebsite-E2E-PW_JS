@@ -1,4 +1,5 @@
 const { test,expect } = require("@playwright/test");
+const { use } = require("react");
 
 
 test("Browser Context Declaration", async ({ browser }) => {
@@ -93,7 +94,52 @@ console.log(text1);
 console.log(text2);
 await newPage.close();
 
-page.locator("input[placeholder='Search']").fill(text2);
+let first_name="Try";
+let last_name="Def";
+let middle_name="Abc";
+
+await page.locator("input[placeholder='Search']").fill("PIM");
+console.log(await page.locator("input[placeholder='Search']").inputValue());
+await page.locator('//ul[@class="oxd-main-menu"]').click();
+await page.locator("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']").click();
+await page.locator("//input[@placeholder='First Name']").fill("Try");
+await page.locator("//input[@placeholder='Middle Name']").fill("Abc");
+await page.locator("//input[@placeholder='Last Name']").fill("Def");
+let empId = await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").inputValue();
+console.log(empId);
+
+await page.locator('label:has(.oxd-switch-input)').click();
+const usernameInput = page.locator('//label[text()="Username"]/../following-sibling::div/input');
+await usernameInput.waitFor({ state: 'visible' });
+await usernameInput.fill("tryabc107890");
+const userPassword = page.locator('//label[text()="Password"]/../following-sibling::div/input');
+await userPassword.waitFor({ state: 'visible' });
+await userPassword.fill("Password@123");
+
+const confirmPassword = page.locator('//label[text()="Confirm Password"]/../following-sibling::div/input');
+await confirmPassword.waitFor({ state: 'visible' });
+await confirmPassword.fill("Password@123");
+await page.locator("//button[@type='submit']").click();
+
+
+
+const name = await page.locator('input[name="firstName"]').inputValue();
+const middlename = await page.locator('input[name="middleName"]').inputValue();
+const lastname = await page.locator('input[name="lastName"]').inputValue();
+
+console.log(name+" "+ middlename+ " "+lastname);
+
+let full_name = first_name+" "+middle_name+" "+last_name;
+let fullname = name+" "+ middlename+ " "+lastname;
+
+expect(full_name).toBe(fullname);
+console.log("Employee added successfully and verified.");
+
+const useremployeeId= page.locator('//label[text()="Employee Id"]/../following-sibling::div/input');
+await useremployeeId.waitFor({ state: 'visible' });
+console.log(await useremployeeId.inputValue());
+
+
 
 
   // Optional: pause to visually verify

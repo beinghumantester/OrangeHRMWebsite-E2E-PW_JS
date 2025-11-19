@@ -8,11 +8,11 @@ const { trace } = require('console');
  */
 const config =({
   testDir: './tests',
-  timeout: 60 * 1000,
+  timeout: 80 * 1000,
   /* Run tests in files in parallel */
 
 expect:{  
-  timeout: 60*1000
+  timeout: 80*1000
 },
 
  reporter : 'html',

@@ -1,0 +1,277 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-with-valid-credential;checking-the-login-functionality-with-valid-credential",
+        "keyword": "Scenario Outline",
+        "line": 10,
+        "name": "Checking the login functionality with valid credential",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1038494400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "the login page is opened on the browser",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4283447299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "user submit valid \"Admin\" and \"admin123\"",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2403886299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "they should be redirected to dashboard",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 548244699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 517243599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-with-valid-credential;checking-the-login-functionality-with-invalid-credential",
+        "keyword": "Scenario Outline",
+        "line": 20,
+        "name": "Checking the login functionality with invalid credential",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 843978199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "the login page is opened on the browser",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4289562500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "user submit invalid \"Admin\" and \"admin12345\"",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2450334500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "they should see error message",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 600112699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 482231500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-with-valid-credential;checking-the-login-functionality-with-invalid-credential",
+        "keyword": "Scenario Outline",
+        "line": 21,
+        "name": "Checking the login functionality with invalid credential",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 802916300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "the login page is opened on the browser",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3746334100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "user submit invalid \"Admin123\" and \"admin123\"",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2102811399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "they should see error message",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 563640099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 951528599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-with-valid-credential;checking-the-login-functionality-with-invalid-credential",
+        "keyword": "Scenario Outline",
+        "line": 22,
+        "name": "Checking the login functionality with invalid credential",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 836663700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "the login page is opened on the browser",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3926372999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "user submit invalid \"Admin45\" and \"admin12345\"",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2119055299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "they should see error message",
+            "match": {
+              "location": "features\\step_definition\\Step_definition.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1002993900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 453551499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-with-valid-credential",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login with valid credential",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]

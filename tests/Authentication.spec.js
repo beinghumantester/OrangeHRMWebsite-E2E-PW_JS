@@ -12,6 +12,8 @@ test("Browser Context Declaration", async ({ browser }) => {
 
 test("Login with invalid credentials. ", async ({page,}) =>
   {
+
+    /*
   let username = page.locator('[name="username"]');
   let password = page.locator('[name="password"]');
   let submit = page.locator('button[type="submit"]');
@@ -47,16 +49,26 @@ test("Login with invalid credentials. ", async ({page,}) =>
 
   await expect(page.locator(".oxd-text.oxd-text--p.oxd-alert-content-text")).toHaveText("Invalid credentials");
   console.log("Login with invalid username and invalid password scenario is passed.");
+*/
+
+
+
+const poManager = new POManager(page);
+const loginpage = poManager.getloginpage();
+await loginpage.goto();
+
+await loginpage.login_invalid_credentials();
+await loginpage.invalid_credential_error_message();
 
   }
 );
 
-test.only("Login with valid credentials", async ({ page,context }) => {
+test("Login with valid credentials", async ({ page }) => {
 
 const poManager = new POManager(page);
-const loginpage = poManager.getloginpage()
+const loginpage = poManager.getloginpage();
 await loginpage.goto();
-await loginpage.login();
+await loginpage.login(username,password);
   
 
   

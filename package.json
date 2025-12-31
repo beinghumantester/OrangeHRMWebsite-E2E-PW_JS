@@ -17,7 +17,12 @@
   },
   "homepage": "https://github.com/beinghumantester/OrangeHRMWebsite-E2E-PW_JS#readme",
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.5.2"
+    "@cucumber/cucumber": "^12.5.0",
+    "@cucumber/messages": "^31.1.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.5.2",
+    "allure-cucumberjs": "^3.4.3",
+    "allure-playwright": "^3.4.3",
+    "cucumber-html-reporter": "^7.2.0"
   }
 }

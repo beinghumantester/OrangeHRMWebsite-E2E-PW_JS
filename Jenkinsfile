@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        
         TEST_ENV = 'qa'
         NODE_ENV = 'test'
     }
@@ -31,7 +30,6 @@ pipeline {
 
         stage('Install Playwright Browsers') {
             steps {
-                // CI-safe: installs Chromium + required OS deps
                 bat 'npx playwright install --with-deps'
             }
         }
@@ -74,7 +72,7 @@ ${env.BUILD_URL}
 Job: ${env.JOB_NAME}
 Build Number: ${env.BUILD_NUMBER}
 
-Check console output:
+Console:
 ${env.BUILD_URL}console
 """
         }

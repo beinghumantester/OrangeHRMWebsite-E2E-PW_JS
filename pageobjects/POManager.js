@@ -13,6 +13,19 @@ getloginpage()
 {
     return this.loginpage;
 }
+
+getadminpage()
+{
+    return this.adminpage
 }
+
+getpimpage()
+{
+    return this.getpimpage;
+}
+}
+
+
+
 
 module.exports={POManager}

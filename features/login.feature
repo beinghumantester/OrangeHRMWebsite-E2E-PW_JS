@@ -1,4 +1,5 @@
 Feature: Login with valid credential
+    @Smoke @Regression
     Scenario Outline: Checking the login functionality with valid credential 
     Given the login page is opened on the browser 
     When user submit valid "<username>" and "<password>"
@@ -9,6 +10,7 @@ Feature: Login with valid credential
     |username       | password    |
     |Admin          | admin123    |
     
+    @Regression
     Scenario Outline: Checking the login functionality with invalid credential 
     Given the login page is opened on the browser 
     When user submit invalid "<username>" and "<password>"

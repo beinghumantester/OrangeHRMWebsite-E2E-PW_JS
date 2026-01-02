@@ -1,7 +1,52 @@
 
+const { test,expect } = require("@playwright/test");
+class PIMPage{
 
+constructor(page)
+{
 
+  this.page= page;
+  this.search_button_click = page.locator("input[placeholder='Search']");
+  this.pim_click = page.locator("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']").click();  //clicking on Add button
+  this.first_name = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[1]/div[2]/input').fill("Try"); //entering first name on PIM Add employee page 
+  this.middle_name =page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[2]/div[2]/input').fill("Abc"); //entering medium name on PIM Add employee page 
+  this.last_name = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[3]/div[2]/input').fill("Def");  ////entering last name on PIM Add employee page 
+  this.create_user_cta = page.locator('label:has(.oxd-switch-input)');
+  this.usernameinput = page.locator('//label[text()="Username"]/../following-sibling::div/input');
+  this.password = page.locator('//label[text()="Password"]/../following-sibling::div/input');
+  this.confirm_password =  page.locator('//label[text()="Confirm Password"]/../following-sibling::div/input');
+  this.employeeid= page.locator('//label[text()="Employee Id"]/../following-sibling::div/input');
+  this.otherid = page.locator('//label[text()="Other Id"]/../following-sibling::div/input');
+  this.license_expiry_date = page.locator("//label[text()='License Expiry Date']/ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input");
+  this.country_dropdown = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[1]/div/div[2]/div/div');
+  this.india_country_click = page.locator('//div[@role="listbox"]//span[text()="Indian"]');
+  this.date_of_birth = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input');
+  this.gender = page.locator ('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/button');
+  this.save_data = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/form/div[1]/div/div[1]/div/div[2]/div');
+  this.blood_group = page.locator('//div[@role="listbox"]//span[text()="B+"]');
+  this.test_field = page.locator("//label[text()='Test_Field']/../following-sibling::div/input");
+  this.all_data_save = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/form/div[2]/button');
+  this.employee_id = page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/input');
+}
 
+async pim_dashboard()
+{
+
+}
+async pim_add_user()
+{
+
+}
+async pim_edit_user()
+{
+
+}
+async pim_delete_user()
+{
+
+}
+
+}
 
 //printing of all menu items 
 
